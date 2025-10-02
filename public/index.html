@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Digital E Gram Panchayat</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+    integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+
+  <link rel="stylesheet" href="css/styles.css"/>
+  <script type="module" src="js/firebase-config.js"></script>
+
+  <style>
+    /* ----------------- Loader Styles ----------------- */
+    #loader {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100%; height: 100%;
+      background: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+    }
+
+    .loader-img {
+      width: 120px;
+      height: 120px;
+      animation: rotate 2s linear infinite;
+      margin-bottom: 20px;
+    }
+
+    @keyframes rotate {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+
+    .loader-text {
+      font-family: 'Roboto Slab', serif;
+      font-size: 2rem;
+      color: #333;
+      letter-spacing: 2px;
+      opacity: 0;
+      animation: fadeIn 2s forwards;
+    }
+
+    @keyframes fadeIn {
+      to { opacity: 1; }
+    }
+
+   
+
+    /* ----------------- Hide main content initially ----------------- */
+    #main-content {
+      display: none;
+      position: relative;
+      z-index: 1;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Loader -->
+  <div id="loader">
+    <img src="assets/logoo.png" alt="Logo" class="loader-img">
+    <div class="loader-text">Digital E-gram Panchayat</div>
+  </div>
+
+  <!-- Background rotating images -->
+  <div id="rotating-bg-1" class="rotating-bg"></div>
+  <div id="rotating-bg-2" class="rotating-bg"></div>
+  <div id="rotating-bg-3" class="rotating-bg"></div>
+  <div id="rotating-bg-4" class="rotating-bg"></div>
+  <div id="rotating-bg-5" class="rotating-bg"></div>
+  <div id="rotating-bg-6" class="rotating-bg"></div>
+  <div id="rotating-bg-7" class="rotating-bg"></div>
+  <div id="rotating-bg-8" class="rotating-bg"></div>
+  <div id="rotating-bg-9" class="rotating-bg"></div>
+  <div id="rotating-bg-10" class="rotating-bg"></div>
+
+  <!-- Main content -->
+  <div id="main-content">
+    <header class="topbar">
+      <img src="assets/logo.png" alt="logo" class="logo"/>
+      <nav>
+        <a href="index.html" title="Home"><i class="fas fa-home"></i></a>
+        <a href="register.html" title="Register"><i class="fas fa-user-plus"></i></a>
+        <a href="login.html" title="Login"><i class="fas fa-right-to-bracket"></i></a>
+      </nav>
+    </header>
+
+    <main class="container">
+      <h1>Digital E Gram Panchayat</h1>
+      <p>Apply for schemes and track your application digitally.</p>
+      <section id="services-list" class="card-grid"></section>
+    </main>
+
+    <footer class="foot">
+      <p>&copy; 2025 Digital E Gram Panchayat</p>
+    </footer>
+  </div>
+
+  <script type="module" src="js/user.js"></script>
+
+  <script>
+    // Show loader first, then reveal main content
+    window.addEventListener('DOMContentLoaded', () => {
+      setTimeout(() => {
+        document.getElementById('loader').style.display = 'none';
+        document.getElementById('main-content').style.display = 'block';
+      }, 3000); // 3 seconds
+    });
+  </script>
+
+</body>
+</html>

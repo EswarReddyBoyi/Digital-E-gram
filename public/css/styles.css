@@ -1,0 +1,190 @@
+:root{
+  --bg:#e3eaf5; --card:#fff; --accent:#0366d6; --muted:#666;
+}
+*{box-sizing:border-box;font-family:Inter, Arial, sans-serif}
+body{margin:0;background:var(--bg);color:#111}
+.topbar{display:flex;align-items:center;justify-content:space-between;padding:12px 20px;background:#fff;box-shadow:0 1px 4px rgba(0,0,0,0.06)}
+.logo{height:80px}
+nav a,nav button{margin-left:12px;text-decoration:none;color:var(--accent)}
+.container{max-width:980px;margin:28px auto;padding:0 16px}
+.card{background:var(--card);padding:16px;border-radius:8px;box-shadow:0 2px 8px rgba(12,12,12,0.04);margin-bottom:16px}
+.card-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px;margin-top:12px}
+.service-card{background:var(--card);padding:12px;border-radius:8px}
+footer.foot{padding:12px;text-align:center;color:var(--muted)}
+.container.auth{max-width:420px;margin:48px auto}
+.container.auth form label{display:block;margin-bottom:8px}
+input,textarea,select,button{width:100%;padding:8px;margin-top:6px;border-radius:6px;border:1px solid #ddd}
+button{background:var(--accent);color:#fff;border:none;cursor:pointer;padding:10px}
+#my-apps .app-row,#apps-list .app-row{background:#fff;padding:8px;border-radius:6px;margin:8px 0;display:flex;justify-content:space-between;align-items:center}
+.small{font-size:13px;color:var(--muted)}
+.topbar nav a {
+  margin-left: 10px;
+  font-size: 1.5rem;
+  color: #0d4e94;
+  margin: 0 15px; 
+  transition: color 0.3s;
+}
+
+.topbar nav a:hover {
+  transform: scale(1.2);
+  color: #007bff;
+}
+
+.top-nav {
+  display: flex;
+  align-items: center;
+  gap: 20px; /* space between icons */
+}
+
+.top-nav a, .top-nav button {
+  background: none;
+  border: none;
+  color: #333;
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: transform 0.2s, color 0.2s;
+}
+
+.top-nav a:hover, .top-nav button:hover {
+  transform: scale(1.2);
+  color: #007bff;
+}
+
+/* ------------------------- */
+/* General Container */
+.container {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 0 20px;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+/* ------------------------- */
+/* Back Button */
+#back-btn {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 8px 15px;
+  background-color: #ec9557;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+#back-btn:hover {
+  background-color: #cbb076;
+}
+
+/* ------------------------- */
+/* Headings */
+h2, h3 {
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+/* ------------------------- */
+/* Paragraphs */
+p {
+  line-height: 1.6;
+  margin-bottom: 15px;
+}
+
+/* ------------------------- */
+/* Apply Form Section */
+form#apply-form {
+  background-color: #fff; /* White box */
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  margin-top: 20px;
+}
+
+form#apply-form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+form#apply-form textarea {
+  width: 100%;
+  min-height: 100px;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  resize: vertical;
+  font-size: 14px;
+}
+
+form#apply-form button[type="submit"] {
+  margin-top: 15px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  border-radius: 6px;
+  color: white;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+form#apply-form button[type="submit"]:hover {
+  background-color: #1582f8;
+}
+
+/* ------------------------- */
+/* Service Info Box */
+.service-info {
+  background-color: #fff;
+  padding: 20px 25px;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  margin-bottom: 25px;
+}
+
+/* Rotating background image */
+/* Common styles for rotating background images */
+.rotating-bg {
+  position: fixed;
+  width: 200px;   /* size of each image */
+  height: 200px;
+  background: url('../assets/logoo.png') center center / contain no-repeat;
+  opacity: 0.05;  /* subtle */
+  z-index: -1;    /* behind content */
+  transform-origin: center;
+  animation: rotateBG 10s linear infinite; /* base speed */
+}
+
+/* Position the 10 "twins" with slightly different speeds */
+#rotating-bg-1  { top: 10%;  left: 15%; animation-duration: 10s; }
+#rotating-bg-2  { top: 20%;  left: 70%; animation-duration: 12s; }
+#rotating-bg-3  { top: 50%;  left: 25%; animation-duration: 11s; }
+#rotating-bg-4  { top: 60%;  left: 60%; animation-duration: 13s; }
+#rotating-bg-5  { top: 30%;  left: 40%; animation-duration: 10s; }
+#rotating-bg-6  { top: 70%;  left: 10%; animation-duration: 14s; }
+#rotating-bg-7  { top: 15%;  left: 50%; animation-duration: 9s; }
+#rotating-bg-8  { top: 55%;  left: 80%; animation-duration: 12s; }
+#rotating-bg-9  { top: 40%;  left: 15%; animation-duration: 11s; }
+#rotating-bg-10 { top: 65%;  left: 45%; animation-duration: 15s; }
+
+
+@keyframes rotateBG {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.forgot-password {
+  text-align: right;
+  margin-top: 5px;
+}
+
+.forgot-password a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.forgot-password a:hover {
+  text-decoration: underline;
+}

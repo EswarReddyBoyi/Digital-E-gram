@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Login - E Gram</title>
+  <link rel="stylesheet" href="css/styles.css"/>
+  <script type="module" src="js/firebase-config.js"></script>
+     <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+  integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+</head>
+<body>
+     <header class="topbar">
+    <img src="assets/logo.png" alt="logo" class="logo"/>
+    <nav>
+      <a href="index.html" title="Home"><i class="fas fa-home"></i></a>
+
+    </nav>
+  </header>
+  <div id="rotating-bg-1" class="rotating-bg"></div>
+<div id="rotating-bg-2" class="rotating-bg"></div>
+<div id="rotating-bg-3" class="rotating-bg"></div>
+<div id="rotating-bg-4" class="rotating-bg"></div>
+<div id="rotating-bg-5" class="rotating-bg"></div>
+<div id="rotating-bg-6" class="rotating-bg"></div>
+<div id="rotating-bg-7" class="rotating-bg"></div>
+<div id="rotating-bg-8" class="rotating-bg"></div>
+<div id="rotating-bg-9" class="rotating-bg"></div>
+<div id="rotating-bg-10" class="rotating-bg"></div>
+
+  <main class="container auth">
+    <h2>Sign in</h2>
+    <form id="login-form">
+      <label>Email<input id="login-email" type="email" required/></label>
+      <label>Password<input id="login-password" type="password" required/></label>
+      <button type="submit">Login</button>
+      <p>No account? <a href="register.html">Register</a></p>
+        <p class="forgot-password">
+    <a href="#" id="forgot-password-link">Forgot Password?</a>
+  </p>
+    </form>
+  </main>
+
+  <script type="module" src="js/auth.js"></script>
+</body>
+</html>

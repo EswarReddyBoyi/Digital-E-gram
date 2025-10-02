@@ -1,0 +1,41 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    // Users collection - users can read their own doc and update allowed fields
+    match /users/{userId} {
+      allow read: if request.auth != null && request.auth.uid == userId;
+      allow create: if request.auth != null && request.auth.uid == userId;
+      allow update: if request.auth != null && request.auth.uid == userId;
+    }
+
+    // Public services - readable by anyone
+    match /services/{svcId} {
+      allow read: if true;
+      allow create: if isOfficer();
+      allow update: if isOfficer();
+      allow delete: if isOfficer();
+    }
+
+    // Applications - only authenticated users may create, users can read their apps, staff/officer can read all
+    match /applications/{appId} {
+      allow create: if request.auth != null && request.resource.data.applicantUid == request.auth.uid;
+      allow read: if request.auth != null && (request.auth.uid == resource.data.applicantUid || isStaffOrOfficer());
+      allow update: if isStaffOrOfficer() || (request.auth.uid == resource.data.applicantUid);
+      allow delete: if false;
+    }
+
+    // Logs - only admin (officer) can read
+    match /logs/{logId} {
+      allow read: if isOfficer();
+      allow create: if false;
+    }
+
+    function isOfficer() {
+      return request.auth != null && get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'officer';
+    }
+    function isStaffOrOfficer() {
+      return request.auth != null && (get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'staff' || get(/databases/$(database)/documents/users/$(request.auth.uid)).data.role == 'officer');
+    }
+  }
+}
